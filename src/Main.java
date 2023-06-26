@@ -1,14 +1,13 @@
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
+        PrimeiraTarefa primeiraTarefa = new PrimeiraTarefa();
+        primeiraTarefa.imprimeNomesOrdenados();
 
-        System.out.println("Digite um numero: ");
-        int num1 = scanner.nextInt();
-
-        Integer num2 = num1;
-
-        System.out.printf("O numero é " + num2);
+        SegundaTarefa segundaTarefa = new SegundaTarefa();
+        segundaTarefa.separandoPessoasPorSexo();
     }
 }
