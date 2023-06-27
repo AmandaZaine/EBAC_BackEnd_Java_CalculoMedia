@@ -1,6 +1,4 @@
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Scanner;
+import java.util.*;
 
 public class SegundaTarefa {
 
@@ -12,19 +10,22 @@ public class SegundaTarefa {
 
         String[] nomesSeparados = nomes.split(",");
 
-        List<String> mulheres = new ArrayList<>();
-        List<String> homens = new ArrayList<>();
+        Map<String, String> mulheres = new HashMap<>();
+        Map<String, String> homens = new HashMap<>();
+
 
         for(String nomeEsexo : nomesSeparados){
             if(nomeEsexo.endsWith("F") || nomeEsexo.endsWith("f")){
-                mulheres.add(nomeEsexo);
-            }else {
-                homens.add(nomeEsexo);
+                mulheres.put(nomeEsexo.split("-")[0], "Mulher");
+            } else {
+                homens.put(nomeEsexo.split("-")[0], "Homem");
             }
         }
 
-        System.out.println("O grupo de mulheres é: " + mulheres);
-        System.out.println("O grupo de homens é: " + homens);
+        System.out.println("O grupo de mulheres é: ");
+        mulheres.forEach((key, value) -> System.out.println(key + " é uma " + value));
+        System.out.println("O grupo de homens é: ");
+        homens.forEach((key, value) -> System.out.println(key + " é um " + value));
 
     }
 }
